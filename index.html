@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Real-Time Local Air Quality Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="icon" href="favicon.ico" />
+</head>
+
+<body>
+  <header>
+    <h1>🌍 Real-Time Air Quality Tracker</h1>
+    <button id="themeToggle">🌙</button>
+  </header>
+
+  <main>
+    <section class="location-info">
+      <h2 id="location">📍 Locating...</h2>
+      <p id="lastUpdated">Last updated: --</p>
+    </section>
+
+    <section class="aqi-summary">
+      <div class="aqi-card">
+        <h3>AQI: <span id="aqi">--</span></h3>
+        <p id="aqiStatus">Status: --</p>
+      </div>
+      <canvas id="aqiChart"></canvas>
+    </section>
+
+    <section class="pollutants">
+      <h2>Pollutant Levels (µg/m³)</h2>
+      <div class="pollutant-grid">
+        <div class="pollutant">PM2.5: <span id="pm25">--</span></div>
+        <div class="pollutant">PM10: <span id="pm10">--</span></div>
+        <div class="pollutant">O₃: <span id="o3">--</span></div>
+        <div class="pollutant">NO₂: <span id="no2">--</span></div>
+        <div class="pollutant">SO₂: <span id="so2">--</span></div>
+        <div class="pollutant">CO: <span id="co">--</span></div>
+      </div>
+    </section>
+
+    <section class="forecast">
+      <h2>Forecast (Next 5 Days)</h2>
+      <canvas id="forecastChart"></canvas>
+    </section>
+
+    <section class="map">
+      <h2>Live AQI Map</h2>
+      <div id="map"></div>
+    </section>
+
+    <section class="health-tips">
+      <h2>💡 Health Tips</h2>
+      <ul id="tipsList"></ul>
+    </section>
+
+    <section class="eco-tracker">
+      <h2>🌱 Eco Habit Tracker</h2>
+      <input type="text" id="habitInput" placeholder="Log a green habit..." />
+      <button id="logHabit">Log</button>
+      <ul id="habitList"></ul>
+    </section>
+
+    <section class="community">
+      <h2>🗨️ Community Voice</h2>
+      <textarea id="feedback" placeholder="Share your air experience..."></textarea>
+      <button id="submitFeedback">Submit</button>
+      <div id="communityComments"></div>
+    </section>
+
+    <section class="footer">
+      <p>Made with ❤️ to breathe better | © 2025 AirAware</p>
+    </section>
+  </main>
+
+  <div id="loader" class="hidden">Loading...</div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
